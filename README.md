@@ -1,57 +1,53 @@
+
+
 # 🛡️ FraudGuard AI: Real-Time Anomaly Detection Engine
 
-[![Python Version](https://img.shields.io/badge/Python-3.9%2B-blue?logo=python&logoColor=white)](https://www.python.org/)
-[![Scikit-Learn](https://img.shields.io/badge/scikit--learn-F7931E?logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
-[![XGBoost](https://img.shields.io/badge/XGBoost-1.7.6-blue?logo=xgboost)](https://xgboost.readthedocs.io/)
-[![Streamlit App](https://img.shields.io/badge/Streamlit-Live_Demo-FF4B4B?logo=streamlit&logoColor=white)](https://creditcardfrauddetection-thxkiwl4gnzkeeouufxgcf.streamlit.app/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+An end-to-end machine learning pipeline and interactive web dashboard engineered to detect fraudulent credit card transactions in extreme class-imbalance environments.
 
-*An end-to-end machine learning pipeline and interactive web dashboard engineered to detect fraudulent credit card transactions in extreme class-imbalance environments.*
-
-### 🔗 [Try the Live Dashboard →](https://creditcardfrauddetection-thxkiwl4gnzkeeouufxgcf.streamlit.app/)
+🔗 [Try the Live Dashboard →]( https://creditcardfrauddetection-thxkiwl4gnzkeeouufxgcf.streamlit.app/)
 
 ---
 
-## 📖 The "Accuracy Paradox" (Problem Statement)
+# 📖 The "Accuracy Paradox" (Problem Statement)
 
-In financial fraud detection, standard classification accuracy is a dangerous metric. In this dataset of **284,807 transactions, only 0.17% (492 cases) are fraudulent**.
+In financial fraud detection, standard classification accuracy is a dangerous metric. In this dataset of 284,807 transactions, only 0.17% (492 cases) are fraudulent.
 
-A baseline model that simply predicts "Normal" for every transaction achieves an accuracy of **99.83%**, while allowing **100% of fraudulent activity** to pass through undetected. This project abandons accuracy in favor of optimizing **F1-Score, Precision, and Recall**, balancing the detection of cybercrime against the operational cost of blocking innocent customers.
+A baseline model that simply predicts "Normal" for every transaction achieves an accuracy of 99.83%, while allowing 100% of fraudulent activity to pass through undetected. This project abandons accuracy in favor of optimizing F1-Score, Precision, and Recall, balancing the detection of cybercrime against the operational cost of blocking innocent customers.
 
 ---
 
-## 🧠 System Architecture & Engineering
+# 🧠 System Architecture & Engineering
 
 ### 1. Data Pipeline & Preprocessing
 
-- **Feature Scaling:** Applied `RobustScaler` to normalize highly skewed and unbounded features (`Time` and `Amount`), ensuring extreme transaction values don't disrupt model gradients.
+- **Feature Scaling:** Applied RobustScaler to normalize highly skewed and unbounded features (`Time` and `Amount`), ensuring extreme transaction values don't disrupt model gradients.
 - **Stratified Partitioning:** Engineered train/test splits that strictly preserve the 99.83% / 0.17% class distribution across all validation subsets to prevent data leakage.
-- **Dimensionality Reduction:** Leveraged pre-computed PCA components (`V1` through `V28`) to maintain data privacy while capturing latent variance.
+- **Dimensionality Reduction:** Leveraged pre-computed PCA components (V1 through V28) to maintain data privacy while capturing latent variance.
 
 ### 2. Algorithmic Evaluation & Tuning
 
 Models were trained using algorithmic class penalization (`class_weight='balanced'` and `scale_pos_weight`) to force gradient optimization toward the minority class.
 
-| Classifier Architecture          | Precision | Recall (Sensitivity) | F1-Score | False Positives (Friction) |
-|-----------------------------------|:---------:|:---------------------:|:--------:|:---------------------------:|
-| Baseline Logistic Regression     | 0.06      | **0.92**              | 0.11     | 1,389                       |
-| Tuned Logistic Regression        | 0.16      | 0.89                  | 0.27     | 460                         |
-| XGBoost Gradient Engine          | 0.50      | 0.85                  | 0.63     | 83                          |
-| 🏆 **Random Forest (Ensemble)**  | **0.96**  | 0.76                  | **0.85** | **3 (Near-Perfect)**        |
+| Classifier Architecture | Precision | Recall (Sensitivity) | F1-Score | False Positives (Friction) |
+|---|---|---|---|---|
+| Baseline Logistic Regression | 0.06 | 0.92 | 0.11 | 1,389 |
+| Tuned Logistic Regression | 0.16 | 0.89 | 0.27 | 460 |
+| XGBoost Gradient Engine | 0.50 | 0.85 | 0.63 | 83 |
+| 🏆 Random Forest (Ensemble) | **0.96** | **0.76** | **0.85** | **3 (Near-Perfect)** |
 
 ### 3. The Business Impact (Production Decision)
 
-While Logistic Regression flagged the most total fraud (highest Recall), it generated **1,389 false alarms** — enough to seriously damage customer trust and overload support teams.
+While Logistic Regression flagged the most total fraud (highest Recall), it generated 1,389 false alarms — enough to seriously damage customer trust and overload support teams.
 
-The **Random Forest Ensemble** was chosen for production deployment because it achieved a **0.85 F1-Score**, catching the majority of fraud while dropping false alarms down to just **3 instances** out of ~57,000 transactions checked.
+The Random Forest Ensemble was chosen for production deployment because it achieved a 0.85 F1-Score, catching the majority of fraud while dropping false alarms down to just 3 instances out of ~57,000 transactions checked.
 
 ---
 
-## 💻 Live Interactive Dashboard
+# 💻 Live Interactive Dashboard
 
-The project features a sleek, dark-mode risk assessment portal built with **Streamlit**.
+The project features a sleek, dark-mode risk assessment portal built with Streamlit.
 
-### 👉 [**Launch the Dashboard**](https://creditcardfrauddetection-thxkiwl4gnzkeeouufxgcf.streamlit.app/)
+👉 [Launch the Dashboard](  )
 
 **Dashboard Features:**
 
@@ -61,7 +57,7 @@ The project features a sleek, dark-mode risk assessment portal built with **Stre
 
 ---
 
-## 🚀 Local Deployment Guide
+# 🚀 Local Deployment Guide
 
 Follow these steps to run the pipeline and UI on your local machine.
 
@@ -74,7 +70,7 @@ Follow these steps to run the pipeline and UI on your local machine.
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/YOUR_USERNAME/Credit_Card_Fraud_Detection.git
+git clone https://github.com/ ADD YOUR GITHUB USERNAME HERE /Credit_Card_Fraud_Detection.git
 cd Credit_Card_Fraud_Detection
 
 # 2. Create and activate a virtual environment (recommended)
@@ -95,7 +91,7 @@ The dashboard will open automatically at `http://localhost:8501`.
 
 ---
 
-## 📂 Project Structure
+# 📂 Project Structure
 
 ```
 Credit_Card_Fraud_Detection/
@@ -110,7 +106,7 @@ Credit_Card_Fraud_Detection/
 
 ---
 
-## 🛠️ Tech Stack
+# 🛠️ Tech Stack
 
 - **Language:** Python 3.9+
 - **ML Libraries:** scikit-learn, XGBoost
@@ -120,8 +116,113 @@ Credit_Card_Fraud_Detection/
 
 ---
 
+# 📷 Project Screenshots
 
+## Streamlit Home Page
 
-## 🙌 Acknowledgments
+![Home](images/app_home.png)
 
-Dataset sourced from the publicly available Kaggle Credit Card Fraud Detection dataset, featuring anonymized transactions made by European cardholders.
+---
+
+## Prediction Dashboard
+
+![Prediction](images/prediction.png)
+
+---
+
+## Analytics Dashboard
+
+![Analytics](images/analytics.png)
+
+---
+
+## Class Distribution
+
+![Class Distribution](images/class_distribution.png)
+
+---
+
+## Correlation Heatmap
+
+![Heatmap](images/correlation_heatmap.png)
+
+---
+
+## Random Forest Confusion Matrix
+
+![Confusion Matrix](images/confusion_matrix_rf.png)
+
+---
+
+## ROC Curve
+
+![ROC](images/roc_curve.png)
+
+---
+
+## Precision-Recall Curve
+
+![PR Curve](images/precision_recall_curve.png)
+
+---
+
+## SHAP Feature Importance
+
+![SHAP](images/shap_importance.png)
+
+---
+
+## SHAP Beeswarm Plot
+
+![SHAP Beeswarm](images/shap_beeswarm.png)
+
+---
+
+# 🔍 SHAP Explainability
+
+SHAP (SHapley Additive exPlanations) was used to interpret the Random Forest model and identify the most influential features affecting fraud prediction.
+
+This improves the transparency and interpretability of the machine learning model.
+
+---
+
+# 📈 Future Improvements
+
+- Deep Learning Models
+- Autoencoder-based Fraud Detection
+- Hyperparameter Optimization
+- Real-time API Deployment
+- Docker Containerization
+- Cloud Deployment
+- Model Monitoring
+
+---
+
+# 👨‍💻 Author
+
+**Atharva**
+
+GitHub:
+https://github.com/Atharva110409
+
+LinkedIn:
+<!-- TODO: Add your LinkedIn URL here -->
+[ ADD LINKEDIN URL HERE ]
+
+Email (optional):
+<!-- TODO: Add contact email if you want -->
+[ ADD EMAIL HERE ]
+
+---
+
+# 📄 License
+
+<!-- TODO: If you have an MIT LICENSE file in the repo, keep this section and link to it. -->
+<!-- Otherwise, remove this section and the License badge at the top. -->
+This project is licensed under the [ ADD LICENSE TYPE ] License — see the [LICENSE](LICENSE) file for details.
+
+---
+
+# ⭐ If you found this project useful
+
+Please consider giving it a ⭐ on GitHub.
