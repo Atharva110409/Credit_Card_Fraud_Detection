@@ -211,7 +211,7 @@ LinkedIn:
 
 Email (optional):
 <!-- TODO: Add contact email if you want -->
-[ ADD EMAIL HERE ]
+[atharvagangurde12345@gmail.com]
 
 ---
 
