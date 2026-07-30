@@ -207,7 +207,7 @@ https://github.com/Atharva110409
 
 LinkedIn:
 <!-- TODO: Add your LinkedIn URL here -->
-[ ADD LINKEDIN URL HERE ]
+[www.linkedin.com/in/atharva-gangurde]
 
 Email (optional):
 <!-- TODO: Add contact email if you want -->
